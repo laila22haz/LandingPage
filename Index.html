@@ -4,34 +4,59 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cozy Corner | رحلتك نحو الإنجاز</title>
-    <!-- استدعاء خط عربي متناسق وراقي -->
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
     
     <style>
-        /* إعدادات عامة */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        /* ================= إعدادات عامة ================= */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
         
         body {
             font-family: 'Tajawal', sans-serif;
-            background-color: #FAF9F6; /* لون أبيض مكسور/كريمي مريح للعين */
-            color: #4A4A4A; /* رمادي داكن ناعم بدل الأسود القاصح */
+            background-color: #FAF9F6;
+            color: #4A4A4A;
             line-height: 1.6;
         }
 
-        /* تنسيق الواجهة الرئيسية */
+        /* ================= الهيدر ================= */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 5%;
+            background-color: transparent;
+            position: absolute;
+            width: 100%;
+            top: 0;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #D4BBA5;
+            letter-spacing: 1px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #6B6B6B;
+            margin-right: 25px;
+            font-weight: 500;
+            font-size: 1.1rem;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover { color: #D4BBA5; }
+
+        /* ================= الواجهة الرئيسية ================= */
         .hero-section {
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
-            min-height: 100vh;
-            padding: 2rem;
-            max-width: 800px;
+            padding: 150px 2rem 50px;
+            max-width: 900px;
             margin: 0 auto;
         }
 
@@ -51,10 +76,9 @@
             max-width: 90%;
         }
 
-        /* تنسيق الزر (CTA) */
         .cta-button {
             display: inline-block;
-            background-color: #D4BBA5; /* لون ترابي/باستيل دافئ */
+            background-color: #D4BBA5;
             color: #FFFFFF;
             font-size: 1.2rem;
             font-weight: 500;
@@ -70,19 +94,282 @@
             transform: translateY(-2px);
         }
 
-        /* تجاوب الشاشات الصغيرة */
+        /* ================= المنتجات ================= */
+        .products-section {
+            padding: 50px 20px 100px;
+            text-align: center;
+        }
+
+        .section-title {
+            font-size: 2.2rem;
+            color: #2C2C2C;
+            margin-bottom: 40px;
+            font-weight: 700;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .product-card {
+            background: #fff;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            padding-bottom: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        .product-card:hover { transform: translateY(-5px); }
+
+        .product-image-container {
+            width: 100%;
+            aspect-ratio: 4 / 5;
+            overflow: hidden;
+            background-color: #EFE9E1; /* لون مؤقت يلا مابانتش التصويرة */
+        }
+
+        .product-image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .product-card:hover .product-image-container img {
+            transform: scale(1.05);
+        }
+
+        .product-title {
+            font-size: 1.2rem;
+            color: #2C2C2C;
+            margin: 15px 0 5px;
+            font-weight: 500;
+        }
+
+        .product-category {
+            font-size: 0.9rem;
+            color: #6B6B6B;
+        }
+
+        .product-price {
+            font-size: 1.3rem;
+            color: #D4BBA5;
+            font-weight: 700;
+            margin-top: 10px;
+        }
+
+        /* ================= من نحن ================= */
+        .about-section {
+            background-color: #FDFCF9;
+            padding: 80px 20px;
+            border-top: 1px solid #EAEAEA;
+        }
+
+        .about-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            margin-top: 30px;
+        }
+
+        .about-text {
+            flex: 1;
+            font-size: 1.15rem;
+            color: #555;
+            line-height: 1.8;
+            text-align: right;
+        }
+
+        .about-text strong { color: #D4BBA5; }
+
+        .about-image {
+            flex: 1;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            background-color: #EFE9E1; /* لون مؤقت */
+        }
+
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* ================= التواصل (معدل باش يجي متناسق) ================= */
+        .contact-section {
+            padding: 80px 20px;
+            text-align: center;
+            background-color: #FAF9F6;
+        }
+
+        .contact-subtitle {
+            font-size: 1.1rem;
+            color: #6B6B6B;
+            margin-bottom: 40px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .contact-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            max-width: 900px;
+            margin: 0 auto;
+            align-items: stretch; /* هادي هي اللي كتردهم فنفس الطول بالضبط */
+        }
+
+        /* توحيد العبارات بين الانستغرام والفورم */
+        .contact-card, .contact-form-box {
+            flex: 1;
+            min-width: 280px;
+            background: #fff;
+            padding: 40px 30px; 
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+        }
+
+        /* تنسيق الانستغرام باش يجي فالوسط */
+        .contact-card {
+            text-decoration: none;
+            color: #2C2C2C;
+            display: flex;
+            flex-direction: column;
+            justify-content: center; /* توسيط عمودي */
+            align-items: center; /* توسيط أفقي */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(212, 187, 165, 0.2);
+        }
+
+        .contact-icon {
+            font-size: 3rem; /* كبرنا الأيقونة شوية باش تعمر الفراغ وتجي متناسقة */
+            margin-bottom: 15px;
+        }
+
+        .contact-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 5px;
+            color: #D4BBA5;
+        }
+
+        .contact-card p {
+            font-size: 1rem;
+            color: #6B6B6B;
+        }
+
+        /* تنسيق الفورم */
+        .contact-form-box {
+            text-align: right;
+        }
+
+        .form-title {
+            font-size: 1.2rem;
+            color: #2C2C2C;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .callback-form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #EAEAEA;
+            border-radius: 10px;
+            font-family: 'Tajawal', sans-serif;
+            font-size: 1rem;
+            background-color: #FAF9F6;
+            color: #4A4A4A;
+            transition: border-color 0.3s ease;
+            text-align: right;
+            direction: rtl;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: #D4BBA5;
+            background-color: #fff;
+        }
+
+        .form-submit-btn {
+            background-color: #D4BBA5;
+            color: #FFFFFF;
+            font-size: 1.1rem;
+            font-weight: 500;
+            padding: 12px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-family: 'Tajawal', sans-serif;
+            transition: background-color 0.3s ease;
+        }
+
+        .form-submit-btn:hover { background-color: #C3A78F; }
+
         @media (max-width: 768px) {
-            .hero-title {
-                font-size: 2.2rem;
-            }
-            .hero-subtitle {
-                font-size: 1.1rem;
-            }
+            .contact-container { flex-direction: column; }
+            .contact-card, .contact-form-box { width: 100%; }
+        }
+
+        /* ================= الفوتر ================= */
+        footer {
+            background-color: #D4BBA5;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+
+        /* ================= تجاوب الشاشات الصغيرة ================= */
+        @media (max-width: 768px) {
+            .hero-title { font-size: 2.2rem; }
+            .hero-subtitle { font-size: 1.1rem; }
+            header { flex-direction: column; gap: 15px; }
+            nav a { margin: 0 10px; }
+            .section-title { font-size: 1.8rem; }
+            .about-content { flex-direction: column; text-align: center; }
+            .about-text { text-align: center; }
+            .about-image { width: 100%; max-width: 400px; margin: 0 auto; }
+            .contact-container { flex-direction: column; }
+            .contact-links { width: 100%; }
+            .contact-form-box { width: 100%; }
         }
     </style>
 </head>
 <body>
 
+    <!-- الهيدر -->
+    <header>
+        <div class="logo">Cozy Corner</div>
+        <nav>
+            <a href="#about">من نحن</a>
+            <a href="#contact">تواصل معنا</a>
+        </nav>
+    </header>
+
+    <!-- الواجهة الرئيسية -->
     <section class="hero-section">
         <h1 class="hero-title">رحلتكِ نحو الإنجاز تبدأ بخطة، وتكتمل بلمسة لون.</h1>
         <p class="hero-subtitle">
@@ -90,6 +377,102 @@
         </p>
         <a href="#products" class="cta-button">ابدئي رحلتك الآن</a>
     </section>
+
+    <!-- قسم المنتجات -->
+    <section id="products" class="products-section">
+        <h2 class="section-title">منتجات Cozy Corner</h2>
+        
+        <div class="products-grid">
+            <div class="product-card">
+                <div class="product-image-container">
+                    <img src="images/planner-1.jpg" alt="دفتر التخطيط">
+                </div>
+                <h3 class="product-title">دفتر التخطيط للإنجاز</h3>
+                <p class="product-category">Plan it. Color it. Love it.</p>
+                <p class="product-price">120 درهم</p>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image-container">
+                    <img src="images/coloring-book.jpg" alt="كتاب التلوين للأطفال">
+                </div>
+                <h3 class="product-title">سلسلة أحمد للتلوين</h3>
+                <p class="product-category">من 8 إلى 14 سنة</p>
+                <p class="product-price">85 درهم</p>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image-container">
+                    <img src="images/mandala-book.jpg" alt="كتاب الماندالا">
+                </div>
+                <h3 class="product-title">كتاب الماندالا للاسترخاء</h3>
+                <p class="product-category">الراحة النفسية</p>
+                <p class="product-price">90 درهم</p>
+            </div>
+            
+            <div class="product-card">
+                <div class="product-image-container">
+                    <img src="images/mandala-book.jpg" alt="كتاب الماندالا">
+                </div>
+                <h3 class="product-title">للاسترخاء</h3>
+                <p class="product-category">الراحة النفسية</p>
+                <p class="product-price">90 درهم</p>
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- قسم من نحن -->
+    <section id="about" class="about-section">
+        <div class="about-container">
+            <h2 class="section-title">قصة Cozy Corner</h2>
+            <div class="about-content">
+                <p class="about-text">
+                    في عالم سريع مليء بالضغوطات، قررنا أن نخلق زاوية هادئة... مساحة تعيد لكِ توازنكِ وتفصلكِ عن صخب الحياة. 
+                    <br><br>
+                    <strong>Cozy Corner</strong> ليست مجرد أدوات مكتبية، بل هي رحلة للبحث عن الراحة النفسية ومتعة الإنجاز. نؤمن بأن التفاصيل الصغيرة، كدفتر تخطيط مصمم بعناية أو صفحة تلوين هادفة خالية من ذوات الأرواح، قادرة على تغيير روتينكِ اليومي وإعادة ترتيب فوضى الأفكار.
+                    <br><br>
+                    مهمتنا هي أن نرافقكِ في كل خطوة نحو أهدافكِ، بمنتجات صُممت بحب لتلهمكِ، وتمنحكِ لحظات من الـ Mindfulness والهدوء الذي تستحقينه.
+                </p>
+                <div class="about-image">
+                    <img src="images/lifestyle-about.jpg" alt="روح Cozy Corner">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم تواصل معنا -->
+    <section id="contact" class="contact-section">
+        <h2 class="section-title">تواصل معنا</h2>
+        <p class="contact-subtitle">عندك شي تساؤل أو بغيتي تطلبي؟ خلي نمرتك وحنا غنصونيو ليك فاقرب وقت، ولا تواصلي معانا فالإنستغرام.</p>
+        
+        <div class="contact-container">
+            
+            <!-- كارت إنستغرام (معدل) -->
+            <a href="https://instagram.com/cozycorner096" target="_blank" class="contact-card">
+                <div class="contact-icon">📱</div>
+                <h3>إنستغرام</h3>
+                <p>تابعينا وتواصلي معانا</p>
+            </a>
+
+            <!-- فورم (خلي نمرتك) -->
+            <div class="contact-form-box">
+                <h3 class="form-title">خلي لينا المعلومات ديالك لتأكيد الطلبية  📞</h3>
+                <form action="https://formspree.io/f/xojonzqy" method="POST" class="callback-form">
+                    <input type="text" name="name" placeholder="الاسم ديالك" class="form-input" required>
+                    <input type="tel" name="phone" placeholder="رقم الهاتف " class="form-input" required>
+                    <button type="submit" class="form-submit-btn">تم </button>
+                </form>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- الفوتر -->
+    <footer>
+        <p>© 2026 Cozy Corner. جميع الحقوق محفوظة.</p>
+    </footer>
 
 </body>
 </html>
