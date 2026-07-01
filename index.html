@@ -328,10 +328,34 @@
         .form-submit-btn:hover { background-color: #C3A78F; }
 
         
-        @media (max-width: 1024px) {
-          /* L-code dyal tablet hna */
+        @media (min-width: 1024px) {
+          .container {
+            max-width: 1100px; /* هاد العبار كيخلي الديزاين مجموع وأنيق */
+            margin: 0 auto; /* باش يجي السيت مسونطري (centré) في الوسط */
+            padding: 0 40px; /* باش نعطيو اتساع من الجناب */
+          }
         }
+        @media (min-width: 1024px) {
+          .hero-section {
+            display: flex;
+            align-items: center; /* باش الكتوب والصورة يجو في نفس السطر مقادين */
+            justify-content: space-between;
+            gap: 50px; /* الفراغ بين الصورة والكتوب باش يبان الديزاين مرتاح */
+          }
         
+          .hero-text {
+            width: 50%; /* الكتوب كياخدو النص ديال المساحة */
+          }
+        
+          .hero-image {
+            width: 45%; /* الصورة كتاخد النص لاخر */
+          }
+        }
+        .hero-image img {
+          max-width: 100%;
+          height: auto;
+          border-radius: 12px; /* إلا بغيتي دوك القنات يكونو دايرين شوية */
+        }
         
         @media (max-width: 768px) {
           /* L-code dyal tlfn hna */
