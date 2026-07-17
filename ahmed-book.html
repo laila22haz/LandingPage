@@ -1,1 +1,489 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>سلسلة أحمد للتلوين | Cozy Corner</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- ================= كود META PIXEL ================= -->
+    <!-- (بدلي 'YOUR_PIXEL_ID' بالرقم ديال البيكسل ديالك) -->
+    <script>
+      !function(f,b,e,v,n,t,s)
+      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e);
+      s.parentNode.insertBefore(t,s)}(window, document,'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', 'YOUR_PIXEL_ID');
+      fbq('track', 'PageView');
+      fbq('track', 'ViewContent', {
+          content_name: "Ahmed's Coloring Book",
+          content_ids: ['ahmed_coloring_book'],
+          content_type: 'product',
+          value: 59.00,
+          currency: 'MAD'
+      });
+    </script>
+    <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=YOUR_PIXEL_ID&ev=PageView&noscript=1"/></noscript>
+    <!-- ================= نهاية كود META PIXEL ================= -->
 
+    <style>
+        /* ================= إعدادات عامة ================= */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background-color: #FAF9F6;
+            color: #4A4A4A;
+            line-height: 1.6;
+        }
+
+        /* ================= الهيدر ================= */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 5%;
+            background-color: transparent;
+            position: absolute;
+            width: 100%;
+            top: 0;
+            z-index: 10;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #D4BBA5;
+            letter-spacing: 1px;
+            text-decoration: none;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #6B6B6B;
+            font-weight: 500;
+            font-size: 1.1rem;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover { color: #D4BBA5; }
+
+        /* ================= الواجهة الرئيسية (Hero) ================= */
+        .hero-section {
+            padding: 120px 5% 50px;
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+        }
+
+        .hero-text { width: 50%; }
+
+        .hero-title {
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: #2C2C2C;
+            margin-bottom: 1rem;
+            line-height: 1.3;
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            font-weight: 400;
+            color: #6B6B6B;
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: #D4BBA5;
+            color: #FFFFFF;
+            font-size: 1.2rem;
+            font-weight: 500;
+            padding: 15px 40px;
+            text-decoration: none;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(212, 187, 165, 0.3);
+        }
+
+        .cta-button:hover {
+            background-color: #C3A78F;
+            transform: translateY(-2px);
+        }
+
+        .hero-image {
+            width: 45%;
+            text-align: center;
+        }
+
+        .hero-image img {
+            max-width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        }
+
+        /* ================= مميزات سريعة (Features) ================= */
+        .features-bar {
+            background-color: #fff;
+            padding: 30px 5%;
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            border-top: 1px solid #EAEAEA;
+            border-bottom: 1px solid #EAEAEA;
+        }
+        .feature-item {
+            text-align: center;
+            color: #555;
+            font-weight: 500;
+            font-size: 1.05rem;
+        }
+        .feature-item span {
+            display: block;
+            font-size: 1.8rem;
+            margin-bottom: 8px;
+        }
+
+        /* ================= صور من الداخل (Mockups) ================= */
+        .mockups-section {
+            padding: 60px 5%;
+            text-align: center;
+        }
+        .section-title {
+            font-size: 2.2rem;
+            color: #2C2C2C;
+            margin-bottom: 40px;
+            font-weight: 700;
+        }
+        .mockups-grid {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+            flex-wrap: wrap;
+        }
+        .mockup-img {
+            width: 30%;
+            min-width: 250px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        /* ================= قسم الطلب (Form & Bundles) ================= */
+        .order-section {
+            padding: 60px 20px 80px;
+            background-color: #FDFCF9;
+            text-align: center;
+        }
+
+        .order-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 40px 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+            text-align: right;
+        }
+
+        /* تنسيق الباكات */
+        .packs-title {
+            font-size: 1.2rem;
+            color: #2C2C2C;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .bundle-option {
+            display: block;
+            position: relative;
+            padding: 15px 20px;
+            margin-bottom: 15px;
+            border: 2px solid #EAEAEA;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background-color: #FAF9F6;
+        }
+
+        .bundle-option:hover {
+            border-color: #D4BBA5;
+        }
+
+        .bundle-option input[type="radio"] {
+            position: absolute;
+            opacity: 0;
+        }
+
+        .bundle-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .bundle-name {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: #4A4A4A;
+        }
+
+        .bundle-price {
+            font-weight: 700;
+            color: #D4BBA5;
+            font-size: 1.1rem;
+        }
+
+        /* الستايل ملي كيتعزل الباك */
+        .bundle-option input[type="radio"]:checked + .bundle-content {
+            color: #2C2C2C;
+        }
+        .bundle-option:has(input[type="radio"]:checked) {
+            border-color: #D4BBA5;
+            background-color: #fff;
+            box-shadow: 0 4px 10px rgba(212, 187, 165, 0.15);
+        }
+
+        /* تنسيق الفورم */
+        .form-input {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 15px;
+            border: 1px solid #EAEAEA;
+            border-radius: 10px;
+            font-family: 'Tajawal', sans-serif;
+            font-size: 1rem;
+            background-color: #FAF9F6;
+            transition: border-color 0.3s ease;
+            direction: rtl;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: #D4BBA5;
+            background-color: #fff;
+        }
+
+        .form-submit-btn {
+            width: 100%;
+            background-color: #D4BBA5;
+            color: #FFFFFF;
+            font-size: 1.2rem;
+            font-weight: 700;
+            padding: 15px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-family: 'Tajawal', sans-serif;
+            transition: background-color 0.3s ease;
+            margin-top: 10px;
+        }
+
+        .form-submit-btn:hover { background-color: #C3A78F; }
+        
+        .shipping-note {
+            font-size: 0.9rem;
+            color: #888;
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        footer {
+            background-color: #D4BBA5;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            font-size: 0.95rem;
+        }
+
+        /* ================= تجاوب الشاشات (Mobile) ================= */
+        @media (max-width: 768px) {
+            .hero-section {
+                flex-direction: column;
+                text-align: center;
+                padding-top: 100px;
+            }
+            .hero-text, .hero-image { width: 100%; }
+            .features-bar { flex-direction: column; gap: 20px; }
+            .mockup-img { width: 100%; max-width: 300px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- الهيدر -->
+    <header>
+        <a href="index.html" class="logo">Cozy Corner</a>
+        <nav>
+            <a href="#order" class="cta-button" style="padding: 8px 25px; font-size: 1rem;">اطلبي الآن</a>
+        </nav>
+    </header>
+
+    <!-- الواجهة الرئيسية للكتاب -->
+    <section class="hero-section">
+        <div class="hero-text">
+            <h1 class="hero-title">سلسلة أحمد للتلوين</h1>
+            <p class="hero-subtitle">
+                لحظات هادئة بعيداً عن الشاشات. 18 صفحة A5 مخصصة للأطفال من 8 حتى 14 عام، لتنمية الإبداع والتركيز في جو دافئ وممتع.
+            </p>
+            <a href="#order" class="cta-button">تأكيد الطلب - 59 درهم</a>
+        </div>
+        <div class="hero-image">
+            <img src="images/img3.png" alt="غلاف سلسلة أحمد للتلوين">
+        </div>
+    </section>
+
+    <!-- مميزات سريعة -->
+    <div class="features-bar">
+        <div class="feature-item">
+            <span>🎨</span>
+            مناسب من 8 إلى 14 عام
+        </div>
+        <div class="feature-item">
+            <span>📏</span>
+            مطبوع على ورق A4 عالي الجودة
+        </div>
+        <div class="feature-item">
+            <span>🌿</span>
+            نشاط هادئ يعزز التركيز
+        </div>
+    </div>
+
+    <!-- نظرة داخل الكتاب (بدلي الصور بالصور ديال الداخل ديال الكتاب) -->
+    <section class="mockups-section">
+        <h2 class="section-title">نظرة داخل الكتاب</h2>
+        <div class="mockups-grid">
+            <!-- حطي هنا 3 تصاور من الداخل ديال الكتاب -->
+            <img src="images/img3.png" alt="صفحة تلوين 1" class="mockup-img">
+            <img src="images/img3.png" alt="صفحة تلوين 2" class="mockup-img">
+            <img src="images/img3.png" alt="صفحة تلوين 3" class="mockup-img">
+        </div>
+    </section>
+
+    <!-- قسم الطلب (الباكات + الفورميلير) -->
+    <section id="order" class="order-section">
+        <h2 class="section-title">اطلبي نسختك الآن</h2>
+        
+        <div class="order-container">
+            <form id="purchaseForm">
+                
+                <!-- خيارات الباكات -->
+                <p class="packs-title">اختاري العرض المناسب لكِ:</p>
+                
+                <label class="bundle-option">
+                    <input type="radio" name="pack" value="1" data-price="59" checked>
+                    <div class="bundle-content">
+                        <span class="bundle-name">كتاب واحد</span>
+                        <span class="bundle-price">59 درهم</span>
+                    </div>
+                </label>
+
+                <label class="bundle-option">
+                    <input type="radio" name="pack" value="2" data-price="118">
+                    <div class="bundle-content">
+                        <span class="bundle-name">2 كتب (لخوت أو أصدقاء)</span>
+                        <span class="bundle-price">118 درهم</span>
+                    </div>
+                </label>
+
+                <label class="bundle-option">
+                    <input type="radio" name="pack" value="5" data-price="295">
+                    <div class="bundle-content">
+                        <span class="bundle-name">5 كتب + علبة أقلام ملونة (هدية)</span>
+                        <span class="bundle-price">295 درهم</span>
+                    </div>
+                </label>
+
+                <hr style="border: 0; border-top: 1px solid #EAEAEA; margin: 25px 0;">
+
+                <!-- المعلومات الشخصية -->
+                <p class="packs-title">معلومات التوصيل:</p>
+                <input type="text" id="fullName" name="name" placeholder="الاسم الكامل" class="form-input" required>
+                <input type="tel" id="phone" name="phone" placeholder="رقم الهاتف" class="form-input" required>
+                <input type="text" id="city" name="city" placeholder="المدينة" class="form-input" required>
+
+                <button type="submit" id="submitBtn" class="form-submit-btn">تأكيد الطلبية والدفع عند الاستلام</button>
+                <p class="shipping-note">+ مصاريف الشحن تضاف حسب المدينة</p>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 Cozy Corner. جميع الحقوق محفوظة.</p>
+    </footer>
+
+    <!-- سكريبت إرسال الداتا للفيسبوك ولـ Formspree -->
+    <script>
+        document.getElementById('purchaseForm').addEventListener('submit', function(e) {
+            e.preventDefault(); // باش الصفحة ما تآكتياليزاش ملي نبركو
+            
+            const submitBtn = document.getElementById('submitBtn');
+            submitBtn.innerText = "جاري تأكيد الطلب...";
+            submitBtn.style.backgroundColor = "#C3A78F";
+            submitBtn.disabled = true;
+
+            // جمع المعلومات من الفورميلير
+            const name = document.getElementById('fullName').value;
+            const phone = document.getElementById('phone').value;
+            const city = document.getElementById('city').value;
+            
+            const selectedPack = document.querySelector('input[name="pack"]:checked');
+            const quantity = selectedPack.value;
+            const totalPrice = selectedPack.getAttribute('data-price');
+
+            // 1. إرسال الإشارة (Purchase Event) للفيسبوك
+            if (typeof fbq === 'function') {
+                fbq('track', 'Purchase', {
+                    content_name: "Ahmed's Coloring Book",
+                    content_ids: ['ahmed_coloring_book'],
+                    content_type: 'product',
+                    value: parseFloat(totalPrice),
+                    currency: 'MAD',
+                    num_items: parseInt(quantity)
+                });
+            }
+
+            // 2. إرسال الداتا لـ Formspree ديالك
+            const formData = new FormData();
+            formData.append('Product', 'سلسلة أحمد للتلوين');
+            formData.append('Quantity', quantity);
+            formData.append('Total_Price', totalPrice + ' MAD');
+            formData.append('Name', name);
+            formData.append('Phone', phone);
+            formData.append('City', city);
+
+            fetch('https://formspree.io/f/xojonzqy', {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            }).then(response => {
+                if (response.ok) {
+                    alert("شكراً لك! توصلنا بطلبك بنجاح. سنتواصل معك قريباً لتأكيد الشحن.");
+                    document.getElementById('purchaseForm').reset(); // مسح الفورم
+                } else {
+                    alert("وقع مشكل أثناء إرسال الطلب، المرجو المحاولة مرة أخرى أو تواصل معنا عبر إنستغرام.");
+                }
+            }).catch(error => {
+                alert("تأكد من اتصالك بالإنترنت وحاول مرة أخرى.");
+            }).finally(() => {
+                // إرجاع الزر للحالة العادية
+                submitBtn.innerText = "تأكيد الطلبية والدفع عند الاستلام";
+                submitBtn.style.backgroundColor = "#D4BBA5";
+                submitBtn.disabled = false;
+            });
+        });
+    </script>
+
+</body>
+</html>
