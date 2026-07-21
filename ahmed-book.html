@@ -52,35 +52,53 @@
         }
 
         /* ================= الهيدر ================= */
-        header {
+               header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 5%;
-            background-color: transparent;
-            position: absolute;
-            width: 100%;
-            top: 0;
-            z-index: 10;
+            direction: ltr; /* باش اللوغو تجي فاليمين */
+            padding: 15px 40px;
+            background: rgba(250, 249, 246, 0.9);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            box-sizing: border-box;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
         }
-
+        
         .logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: #D4BBA5;
-            letter-spacing: 1px;
-            text-decoration: none;
+            order: 2;
         }
-
+        
+        .logo img {
+            width: 80px;
+            height: auto;
+            display: block;
+        }
+        
+        nav {
+            order: 1;
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+        
         nav a {
             text-decoration: none;
             color: #6B6B6B;
             font-weight: 500;
             font-size: 1.1rem;
+            margin: 0;
             transition: color 0.3s ease;
         }
-
-        nav a:hover { color: #D4BBA5; }
+        
+        nav a:hover {
+            color: #D4BBA5;
+        }
 
         /* ================= الواجهة الرئيسية (Hero) ================= */
         .hero-section {
@@ -331,7 +349,11 @@
 
     <!-- الهيدر -->
     <header>
-        <a href="index.html" class="logo">Cozy Corner</a>
+        <div class="logo">
+            <a href="index.html">
+            <img src="images/logo.png" alt="Cozy Corner" style="width: 80px; height: auto; mix-blend-mode: multiply;">
+            </a>
+        </div>
         <nav>
             <a href="#order" class="cta-button" style="padding: 8px 25px; font-size: 1rem;">اطلب الآن</a>
         </nav>
