@@ -452,10 +452,10 @@
         <p>© 2026 Cozy Corner. جميع الحقوق محفوظة.</p>
     </footer>
 
-    <!-- سكريبت إرسال الداتا للفيسبوك ولـ Formspree -->
+        <!-- سكريبت إرسال الداتا للفيسبوك ولـ Formspree -->
     <script>
         document.getElementById('purchaseForm').addEventListener('submit', function(e) {
-            e.preventDefault(); // باش الصفحة ما تآكتياليزاش ملي نبركو
+            e.preventDefault(); // 
             
             const submitBtn = document.getElementById('submitBtn');
             submitBtn.innerText = "جاري تأكيد الطلب...";
@@ -471,19 +471,7 @@
             const quantity = selectedPack.value;
             const totalPrice = selectedPack.getAttribute('data-price');
 
-            // 1. إرسال الإشارة (Purchase Event) للفيسبوك
-            if (typeof fbq === 'function') {
-                fbq('track', 'Purchase', {
-                    content_name: "Ahmed's Coloring Book",
-                    content_ids: ['ahmed_coloring_book'],
-                    content_type: 'product',
-                    value: parseFloat(totalPrice),
-                    currency: 'MAD',
-                    num_items: parseInt(quantity)
-                });
-            }
-
-            // 2. إرسال الداتا لـ Formspree ديالك
+            // إرسال الداتا لـ Formspree ديالك
             const formData = new FormData();
             formData.append('Product', 'سلسلة أحمد للتلوين');
             formData.append('Quantity', quantity);
@@ -500,8 +488,23 @@
                 }
             }).then(response => {
                 if (response.ok) {
+                    // 1. رسالة النجاح للزبون
                     alert("شكراً لك! توصلنا بطلبك بنجاح. سنتواصل معك قريباً لتأكيد الشحن.");
-                    document.getElementById('purchaseForm').reset(); // مسح الفورم
+                    
+                    // 2. إرسال الإشارة (Purchase Event) للفيسبوك (فقط عند النجاح)
+                    if (typeof fbq === 'function') {
+                        fbq('track', 'Purchase', {
+                            content_name: "Ahmed's Coloring Book",
+                            content_ids: ['ahmed_coloring_book'],
+                            content_type: 'product',
+                            value: parseFloat(totalPrice),
+                            currency: 'MAD',
+                            num_items: parseInt(quantity)
+                        });
+                    }
+
+                    // 3. مسح الفورم
+                    document.getElementById('purchaseForm').reset(); 
                 } else {
                     alert("وقع مشكل أثناء إرسال الطلب، المرجو المحاولة مرة أخرى أو تواصل معنا عبر إنستغرام.");
                 }
@@ -515,6 +518,7 @@
             });
         });
     </script>
+
 
 </body>
 </html>
