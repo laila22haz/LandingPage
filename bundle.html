@@ -463,19 +463,33 @@
             font-size: 1rem;
         }
 
-        /* ================= تجاوب الشاشات (Mobile) ================= */
-        @media (max-width: 768px) {
+        /* ================= تجاوب الشاشات (Mobile & Tablet) ================= */
+        @media (max-width: 1024px) {
             .hero-section {
                 flex-direction: column;
                 text-align: center;
-                padding-top: 50px;
+                padding-top: 100px;
             }
-            .hero-text, .hero-image { width: 100%; }
+            .hero-text { 
+                width: 100%; 
+                margin-bottom: 40px; /* زدنا مسافة زوينة بين التيكست والصورة */
+            }
+            .hero-title {
+                font-size: 2.3rem; /* صغرنا العنوان شوية باش يجي متناسق مع الطابليط */
+            }
+            .hero-image { 
+                width: 100%; 
+            }
+            .hero-image img {
+                max-width: 90%; /* خلينا شوية دالتيساع من الجناب باش ما تجيش مخنوقة */
+                transform: scale(1); /* حيدنا الزووم باش الصورة تبقى شادة بلاصتها */
+            }
             .features-bar { flex-direction: column; gap: 15px; }
-            .testimonial-card, .mockup-img { width: 100%; max-width: 350px; }
+            .photo-review-card, .mockup-img { width: 100%; max-width: 380px; }
             .bundle-name { font-size: 0.95rem; flex-wrap: wrap; gap: 8px; }
             nav a.nav-link { display: none; }
         }
+
     </style>
 </head>
 <body>
