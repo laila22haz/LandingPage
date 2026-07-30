@@ -198,74 +198,87 @@
             margin-bottom: 12px;
         }
 
-        /* ================= آراء الزبناء (Testimonials) ================= */
-        .testimonials-section {
+        /* ================= آراء وصور الزبناء ================= */
+        .photo-reviews-section {
             padding: 80px 5%;
             background-color: #FAF9F6;
             text-align: center;
         }
-        .testimonials-grid {
+        
+        .section-subtitle {
+            font-size: 1.15rem;
+            color: #6B6B6B;
+            margin-top: -30px;
+            margin-bottom: 50px;
+        }
+
+        .photo-reviews-grid {
             display: flex;
             justify-content: center;
             gap: 25px;
-            max-width: 1100px;
+            max-width: 1150px;
             margin: 0 auto;
             flex-wrap: wrap;
         }
-        .testimonial-card {
+
+        .photo-review-card {
             background-color: #fff;
-            width: 30%;
-            min-width: 280px;
-            padding: 30px;
-            border-radius: 20px;
-            box-shadow: 0 8px 30px rgba(0,0,0,0.04);
-            transition: transform 0.4s ease;
-            text-align: right;
+            width: 31%;
+            min-width: 300px;
+            border-radius: 18px;
+            overflow: hidden; /* باش التصويرة تاخد الفورمة الدائرية ديال الكارد من الفوق */
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            display: flex;
+            flex-direction: column;
             border: 1px solid #F0EBE1;
+            text-align: right;
         }
-        .testimonial-card:hover {
+
+        .photo-review-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 15px 35px rgba(212, 187, 165, 0.15);
+            box-shadow: 0 15px 35px rgba(212, 187, 165, 0.2);
             border-color: #D4BBA5;
         }
+
+        .review-photo {
+            width: 100%;
+            aspect-ratio: 4 / 3; /* القياس المثالي باش يبانو التصاور كاملين قد قد */
+            object-fit: cover;
+            border-bottom: 3px solid #FAF9F6;
+        }
+
+        .review-content {
+            padding: 25px 20px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1; /* باش يخلو الكاردز كاملين بنفس الطول واخا يختلف طول التيكست */
+        }
+
         .stars {
             color: #FFC107;
-            font-size: 1.2rem;
-            margin-bottom: 15px;
+            font-size: 1.1rem;
+            margin-bottom: 12px;
+            letter-spacing: 2px;
         }
+
         .review-text {
-            font-size: 1.05rem;
+            font-size: 1rem;
             color: #555;
             line-height: 1.7;
-            margin-bottom: 20px;
             font-style: italic;
+            margin-bottom: 20px;
+            flex-grow: 1;
         }
-        .customer-info {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        .customer-avatar {
-            width: 40px;
-            height: 40px;
-            background-color: #D4BBA5;
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            font-size: 1.2rem;
-        }
-        .customer-details h4 {
+
+        .customer-name {
+            font-weight: 700;
             color: #2C2C2C;
-            font-size: 1rem;
-            margin: 0;
+            font-size: 0.95rem;
+            border-top: 1px solid #F0EBE1;
+            padding-top: 15px;
         }
-        .customer-details span {
-            color: #888;
-            font-size: 0.85rem;
-        }
+
 
         /* ================= صور من الداخل (Mockups) ================= */
         .mockups-section {
@@ -513,50 +526,43 @@
 
     <!-- ================= آراء الزبناء (القسم الجديد) ================= -->
     <section id="testimonials" class="testimonials-section">
-        <h2 class="section-title"> آراء زبناء CozyCorner 💛</h2>
-        <div class="testimonials-grid">
+        <!-- ================= آراء وصور الزبناء ================= -->
+    <section id="real-photos" class="photo-reviews-section">
+        <h2 class="section-title">شنو قالو الكليان اللي وصلاتهم المجموعة 💛</h2>
+        <p class="section-subtitle">صور وآراء حقيقية من زبنائنا</p>
+        
+        <div class="photo-reviews-grid">
             
-            <!-- الرأي 1 -->
-            <div class="testimonial-card">
-                <div class="stars">⭐⭐⭐⭐⭐</div>
-                <p class="review-text">"خديت الباك لوليداتي بجوج، عجبوهم بزاف! الورق غليظ والرسومات زوينين. غادي نعاود نتقدى من عندكم أكيد."</p>
-                <div class="customer-info">
-                    <div class="customer-avatar">M</div>
-                    <div class="customer-details">
-                        <h4>مريم</h4>
-                        <span>الدار البيضاء</span>
-                    </div>
+            <!-- الرأي الأول -->
+            <div class="photo-review-card">
+                <img src="images/image.png" alt="صورة طلبية زبونة" class="review-photo">
+                <div class="review-content">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p class="review-text">"وصلاتني الأمانة اليوم، الدفاتر كيحمقو والألوان جودتهم واعرة. شكراً بزاف على التعامل الزوين ميرسي بوكو!"</p>
                 </div>
             </div>
 
-            <!-- الرأي 2 -->
-            <div class="testimonial-card">
-                <div class="stars">⭐⭐⭐⭐⭐</div>
-                <p class="review-text">"أحسن حاجة درت هي خديت هاد الدفاتر، نقصو ليهم من التليفون وولا عندهم الخاطر يلوّنو. التوصيل كان سريع تبارك الله عليكم."</p>
-                <div class="customer-info">
-                    <div class="customer-avatar">K</div>
-                    <div class="customer-details">
-                        <h4>كريم</h4>
-                        <span>الرباط</span>
-                    </div>
+            <!-- الرأي الثاني -->
+            <div class="photo-review-card">
+                <img src="images/image_2.png" alt="صورة طلبية زبونة" class="review-photo">
+                <div class="review-content">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p class="review-text">"خديت الباك لوليداتي وعجبهم بزاف، حتى التغليف نقي والتوصيل كان سريع. تبارك الله عليكم أكيد غنعاود نطلب."</p>
                 </div>
             </div>
 
-            <!-- الرأي 3 -->
-            <div class="testimonial-card">
-                <div class="stars">⭐⭐⭐⭐⭐</div>
-                <p class="review-text">"الدفاتر كيحمقو! الجودة ممتازة والثمن مناسب جداً مقارنة مع شنو كاين فالسوق. الله يعطيكوم الصحة فكرة رائعة."</p>
-                <div class="customer-info">
-                    <div class="customer-avatar">F</div>
-                    <div class="customer-details">
-                        <h4>فاطمة الزهراء</h4>
-                        <span>مراكش</span>
-                    </div>
+            <!-- الرأي الثالث -->
+            <div class="photo-review-card">
+                <img src="images/image_3.png" alt="صورة طلبية زبونة" class="review-photo">
+                <div class="review-content">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p class="review-text">"أحسن حاجة خديت هاد السيمانة باش نبعد على ضغوطات الخدمة والتليفون. جودة الورق ممتازة شكراً Cozy Corner!"</p>
                 </div>
             </div>
 
         </div>
     </section>
+
     <!-- ================= نهاية قسم آراء الزبناء ================= -->
 
     <!-- نظرة داخل الدفاتر -->
