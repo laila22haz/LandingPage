@@ -104,72 +104,53 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* ================= الواجهة الرئيسية (Hero) ================= */
-        .hero-section {
-            padding: 60px 3% 40px;
-            max-width: 1250px;
-            margin: 0 auto;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 30px; /* نقصت شوية الـ gap باش يبقاو قراب لبعضياتهم */
-            animation: fadeIn 1s ease-out;
-        }
-
-        .hero-text { 
-            width: 40%; /* عطينا 40% للتيكست */
-        }
-
-        .hero-title {
-            font-size: 3rem;
-            font-weight: 900;
-            color: #2C2C2C;
-            margin-bottom: 1rem;
-            line-height: 1.3;
-        }
-
-        .hero-subtitle {
-            font-size: 1.15rem;
-            font-weight: 400;
-            color: #6B6B6B;
-            margin-bottom: 2rem;
-            line-height: 1.8;
-        }
-
-        .cta-button {
-            display: inline-block;
-            background-color: #D4BBA5;
-            color: #FFFFFF;
-            font-size: 1.2rem;
-            font-weight: 700;
-            padding: 15px 40px;
-            text-decoration: none;
-            border-radius: 30px;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(212, 187, 165, 0.4);
-            animation: pulse 2s infinite;
-        }
-
-        .cta-button:hover {
-            background-color: #C3A78F;
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(195, 167, 143, 0.6);
-        }
-
-        .hero-image {
-            width: 55%; /* عطينا 55% للصورة (40 + 55 = 95%، يعني باقا مساحة خاوية للـ gap) */
-            text-align: center;
-            display: flex;
-            justify-content: center;
-        }
-
-        .hero-image img {
-            width: 100%; /* رديتها 100% فبلاصت 100px */
-            max-width: 850px; /* باش ما تفوتش هاد القياس وتزيان فجميع الشاشات */
-            border-radius: 15px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
-            animation: float 4s ease-in-out infinite;
-        }
+            /* ================= الواجهة الرئيسية (Hero) ================= */
+            .hero-section {
+                padding: 60px 3% 40px; /* نقصنا الـ padding باش نعطيو مساحة أكبر للمحتوى */
+                max-width: 1400px; /* كبرنا العرض الإجمالي للصفحة */
+                margin: 0 auto;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                gap: 30px;
+                animation: fadeIn 1s ease-out;
+            }
+            
+            .hero-text { 
+                width: 35%; /* نقصنا المساحة ديال التيكست باش نوسعو للصورة */
+            }
+            
+            .hero-title {
+                font-size: 3rem; /* كبرنا العنوان شوية باش يجي متوازن مع الصورة الكبيرة */
+                font-weight: 900;
+                color: #2C2C2C;
+                margin-bottom: 1rem;
+                line-height: 1.3;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.15rem;
+                font-weight: 400;
+                color: #6B6B6B;
+                margin-bottom: 2rem;
+                line-height: 1.8;
+            }
+            
+            .hero-image { 
+                width: 65%; /* عطينا للصورة 65% من المساحة باش تعمر داك الإطار الأحمر */
+                text-align: center;
+                display: flex;
+                justify-content: center;
+            }
+            
+            .hero-image img {
+                width: 100%; 
+                max-width: 850px; /* خلينا ليها مساحة فين تكبر براحتها */
+                border-radius: 15px;
+                box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+                animation: float 4s ease-in-out infinite; 
+                transform: scale(1.05); /* زدنا هادي باش نزيدو نكبروها شوية القدام */
+            }
 
 
         /* ================= مميزات سريعة (Features) ================= */
