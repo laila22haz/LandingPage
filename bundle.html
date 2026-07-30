@@ -112,11 +112,13 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            gap: 40px;
+            gap: 30px; /* نقصت شوية الـ gap باش يبقاو قراب لبعضياتهم */
             animation: fadeIn 1s ease-out;
         }
 
-        .hero-text { width: 50%; }
+        .hero-text { 
+            width: 40%; /* عطينا 40% للتيكست */
+        }
 
         .hero-title {
             font-size: 3rem;
@@ -155,18 +157,20 @@
         }
 
         .hero-image {
-            width: 75%;
+            width: 55%; /* عطينا 55% للصورة (40 + 55 = 95%، يعني باقا مساحة خاوية للـ gap) */
             text-align: center;
             display: flex;
-            justify-content : center
+            justify-content: center;
         }
 
         .hero-image img {
-            max-width: 100px;
+            width: 100%; /* رديتها 100% فبلاصت 100px */
+            max-width: 850px; /* باش ما تفوتش هاد القياس وتزيان فجميع الشاشات */
             border-radius: 15px;
             box-shadow: 0 15px 35px rgba(0,0,0,0.1);
             animation: float 4s ease-in-out infinite;
         }
+
 
         /* ================= مميزات سريعة (Features) ================= */
         .features-bar {
