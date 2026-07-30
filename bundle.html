@@ -1,1 +1,681 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>المجموعة الشاملة للتلوين | Cozy Corner</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    
+    <!-- ================= كود META PIXEL ================= -->
+    <script>
+      !function(f,b,e,v,n,t,s)
+      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e);
+      s.parentNode.insertBefore(t,s)}(window, document,'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', 'YOUR_PIXEL_ID'); /* بدلي YOUR_PIXEL_ID بالرقم ديالك */
+      fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=YOUR_PIXEL_ID&ev=PageView&noscript=1"/></noscript>
+    <!-- ================= نهاية كود META PIXEL ================= -->
 
+    <style>
+        /* ================= إعدادات عامة ================= */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background-color: #FAF9F6;
+            color: #4A4A4A;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* ================= شريط الإعلانات المتحرك ================= */
+        .announcement-bar {
+            background: linear-gradient(90deg, #D4BBA5, #C3A78F);
+            color: white;
+            font-weight: 700;
+            padding: 8px 0;
+            font-size: 0.95rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        /* ================= الهيدر (Navbar) ================= */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 5%;
+            background-color: rgba(250, 249, 246, 0.95);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+        }
+
+        .logo {
+            font-size: 1.6rem;
+            font-weight: 900;
+            color: #C3A78F;
+            letter-spacing: 1px;
+            text-decoration: none;
+            transition: transform 0.3s ease;
+        }
+        .logo:hover { transform: scale(1.05); }
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        nav a.nav-link {
+            text-decoration: none;
+            color: #6B6B6B;
+            font-weight: 500;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+        }
+
+        nav a.nav-link:hover { color: #D4BBA5; }
+
+        /* ================= حركات الأنميشن ================= */
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(212, 187, 165, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(212, 187, 165, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(212, 187, 165, 0); }
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* ================= الواجهة الرئيسية (Hero) ================= */
+        .hero-section {
+            padding: 80px 5% 60px;
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+            animation: fadeIn 1s ease-out;
+        }
+
+        .hero-text { width: 50%; }
+
+        .hero-title {
+            font-size: 2.8rem;
+            font-weight: 900;
+            color: #2C2C2C;
+            margin-bottom: 1rem;
+            line-height: 1.3;
+        }
+
+        .hero-subtitle {
+            font-size: 1.15rem;
+            font-weight: 400;
+            color: #6B6B6B;
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: #D4BBA5;
+            color: #FFFFFF;
+            font-size: 1.2rem;
+            font-weight: 700;
+            padding: 15px 40px;
+            text-decoration: none;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(212, 187, 165, 0.4);
+            animation: pulse 2s infinite;
+        }
+
+        .cta-button:hover {
+            background-color: #C3A78F;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(195, 167, 143, 0.6);
+        }
+
+        .hero-image {
+            width: 45%;
+            text-align: center;
+        }
+
+        .hero-image img {
+            max-width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            animation: float 4s ease-in-out infinite;
+        }
+
+        /* ================= مميزات سريعة (Features) ================= */
+        .features-bar {
+            background-color: #fff;
+            padding: 40px 5%;
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            border-top: 1px solid #EAEAEA;
+            border-bottom: 1px solid #EAEAEA;
+        }
+        .feature-item {
+            text-align: center;
+            color: #555;
+            font-weight: 500;
+            font-size: 1.05rem;
+            transition: transform 0.3s ease;
+            padding: 15px;
+            border-radius: 15px;
+        }
+        .feature-item:hover {
+            transform: translateY(-5px);
+            background-color: #FAF9F6;
+        }
+        .feature-item span {
+            display: block;
+            font-size: 2.2rem;
+            margin-bottom: 12px;
+        }
+
+        /* ================= آراء الزبناء (Testimonials) ================= */
+        .testimonials-section {
+            padding: 80px 5%;
+            background-color: #FAF9F6;
+            text-align: center;
+        }
+        .testimonials-grid {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            max-width: 1100px;
+            margin: 0 auto;
+            flex-wrap: wrap;
+        }
+        .testimonial-card {
+            background-color: #fff;
+            width: 30%;
+            min-width: 280px;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.04);
+            transition: transform 0.4s ease;
+            text-align: right;
+            border: 1px solid #F0EBE1;
+        }
+        .testimonial-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(212, 187, 165, 0.15);
+            border-color: #D4BBA5;
+        }
+        .stars {
+            color: #FFC107;
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+        }
+        .review-text {
+            font-size: 1.05rem;
+            color: #555;
+            line-height: 1.7;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+        .customer-info {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .customer-avatar {
+            width: 40px;
+            height: 40px;
+            background-color: #D4BBA5;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        .customer-details h4 {
+            color: #2C2C2C;
+            font-size: 1rem;
+            margin: 0;
+        }
+        .customer-details span {
+            color: #888;
+            font-size: 0.85rem;
+        }
+
+        /* ================= صور من الداخل (Mockups) ================= */
+        .mockups-section {
+            padding: 80px 5%;
+            text-align: center;
+            background-color: #fff;
+            border-top: 1px solid #EAEAEA;
+        }
+        .section-title {
+            font-size: 2.4rem;
+            color: #2C2C2C;
+            margin-bottom: 50px;
+            font-weight: 900;
+        }
+        .mockups-grid {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            max-width: 1000px;
+            margin: 0 auto;
+            flex-wrap: wrap;
+        }
+        .mockup-img {
+            width: 30%;
+            min-width: 250px;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            cursor: pointer;
+        }
+        .mockup-img:hover {
+            transform: scale(1.05) translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+        }
+
+        /* ================= قسم الطلب ================= */
+        .order-section {
+            padding: 80px 20px;
+            background-color: #FAF9F6;
+            text-align: center;
+        }
+
+        .order-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 40px 30px;
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.06);
+            text-align: right;
+        }
+
+        .packs-title {
+            font-size: 1.2rem;
+            color: #2C2C2C;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .bundle-option {
+            display: block;
+            position: relative;
+            padding: 18px 20px;
+            margin-bottom: 15px;
+            border: 2px solid #EAEAEA;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background-color: #FAF9F6;
+        }
+
+        .bundle-option:hover { border-color: #D4BBA5; }
+
+        .bundle-option input[type="radio"] {
+            position: absolute;
+            opacity: 0;
+        }
+
+        .bundle-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .bundle-name {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: #4A4A4A;
+            display: flex;
+            align-items: center;
+        }
+
+        .bundle-price {
+            font-weight: 900;
+            color: #D4BBA5;
+            font-size: 1.2rem;
+        }
+
+        .badge {
+            background-color: #E74C3C;
+            color: white;
+            font-size: 0.75rem;
+            padding: 4px 10px;
+            border-radius: 20px;
+            margin-right: 10px;
+            font-weight: 700;
+            animation: pulse-badge 2s infinite;
+        }
+
+        @keyframes pulse-badge {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        .bundle-option input[type="radio"]:checked + .bundle-content { color: #2C2C2C; }
+        .bundle-option:has(input[type="radio"]:checked) {
+            border-color: #D4BBA5;
+            background-color: #fff;
+            box-shadow: 0 4px 15px rgba(212, 187, 165, 0.2);
+            transform: scale(1.02);
+        }
+
+        /* تنسيق الفورم */
+        .form-input {
+            width: 100%;
+            padding: 16px;
+            margin-bottom: 15px;
+            border: 2px solid #EAEAEA;
+            border-radius: 10px;
+            font-family: 'Tajawal', sans-serif;
+            font-size: 1rem;
+            background-color: #FAF9F6;
+            transition: all 0.3s ease;
+            direction: rtl;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: #D4BBA5;
+            background-color: #fff;
+            box-shadow: 0 0 0 4px rgba(212, 187, 165, 0.1);
+        }
+
+        .form-submit-btn {
+            width: 100%;
+            background-color: #2C2C2C;
+            color: #FFFFFF;
+            font-size: 1.3rem;
+            font-weight: 900;
+            padding: 18px;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            font-family: 'Tajawal', sans-serif;
+            transition: all 0.3s ease;
+            margin-top: 10px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+        }
+
+        .form-submit-btn:hover { 
+            background-color: #D4BBA5; 
+            transform: translateY(-2px);
+        }
+        
+        .shipping-note {
+            font-size: 0.95rem;
+            color: #888;
+            text-align: center;
+            margin-top: 15px;
+            font-weight: 500;
+        }
+
+        footer {
+            background-color: #2C2C2C;
+            color: #fff;
+            text-align: center;
+            padding: 25px;
+            font-size: 1rem;
+        }
+
+        /* ================= تجاوب الشاشات (Mobile) ================= */
+        @media (max-width: 768px) {
+            .hero-section {
+                flex-direction: column;
+                text-align: center;
+                padding-top: 50px;
+            }
+            .hero-text, .hero-image { width: 100%; }
+            .features-bar { flex-direction: column; gap: 15px; }
+            .testimonial-card, .mockup-img { width: 100%; max-width: 350px; }
+            .bundle-name { font-size: 0.95rem; flex-wrap: wrap; gap: 8px; }
+            nav a.nav-link { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- شريط الإعلانات -->
+    <div class="announcement-bar">
+        <marquee behavior="scroll" direction="right" scrollamount="5">
+            ✨ عرض خاص: اطلبي المجموعة الكاملة اليوم واحصلي على ساعات من الهدوء والإبداع! ✨ الدفع عند الاستلام متاح في جميع المدن 🚚
+        </marquee>
+    </div>
+
+    <!-- الهيدر (Navbar) -->
+    <header>
+        <a href="#" class="logo">Cozy Corner</a>
+        <nav>
+            <a href="#features" class="nav-link">المميزات</a>
+            <a href="#testimonials" class="nav-link">آراء الكليان</a> <!-- ضفت الرابط هنا -->
+            <a href="#mockups" class="nav-link">محتوى الدفاتر</a>
+            <a href="#order" class="cta-button" style="padding: 10px 25px; font-size: 1rem; animation: none;">اطلبي العرض الآن</a>
+        </nav>
+    </header>
+
+    <!-- الواجهة الرئيسية -->
+    <section class="hero-section">
+        <div class="hero-text">
+            <h1 class="hero-title">المجموعة الشاملة: دفتري التلوين</h1>
+            <p class="hero-subtitle">
+                اجمعي بين المتعة والفائدة مع مجموعتنا المكونة من دفتري تلوين متميزين. صفحات مليئة بالإبداع والهدوء مخصصة للأطفال من 8 حتى 14 عام، لتجربة تلوين مضاعفة لا تُنسى.
+            </p>
+            <a href="#order" class="cta-button">تأكيد طلب المجموعة - 118 درهم</a>
+        </div>
+        <div class="hero-image">
+            <img src="images/bundle-books.png" alt="مجموعة دفتري التلوين">
+        </div>
+    </section>
+
+    <!-- مميزات سريعة -->
+    <div id="features" class="features-bar">
+        <div class="feature-item">
+            <span>🎨</span>
+            دفتري تلوين بتصاميم مختلفة
+        </div>
+        <div class="feature-item">
+            <span>📏</span>
+            مطبوع على ورق A4 عالي الجودة
+        </div>
+        <div class="feature-item">
+            <span>🌿</span>
+            ساعات من الهدوء والتركيز
+        </div>
+    </div>
+
+    <!-- ================= آراء الزبناء (القسم الجديد) ================= -->
+    <section id="testimonials" class="testimonials-section">
+        <h2 class="section-title">شنو قالو علينا الكليان 💛</h2>
+        <div class="testimonials-grid">
+            
+            <!-- الرأي 1 -->
+            <div class="testimonial-card">
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+                <p class="review-text">"خديت الباك لوليداتي بجوج، عجبوهم بزاف! الورق غليظ والرسومات زوينين. غادي نعاود نتقدى من عندكم أكيد."</p>
+                <div class="customer-info">
+                    <div class="customer-avatar">M</div>
+                    <div class="customer-details">
+                        <h4>مريم</h4>
+                        <span>الدار البيضاء</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- الرأي 2 -->
+            <div class="testimonial-card">
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+                <p class="review-text">"أحسن حاجة درت هي خديت هاد الدفاتر، نقصو ليهم من التليفون وولا عندهم الخاطر يلوّنو. التوصيل كان سريع تبارك الله عليكم."</p>
+                <div class="customer-info">
+                    <div class="customer-avatar">K</div>
+                    <div class="customer-details">
+                        <h4>كريم</h4>
+                        <span>الرباط</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- الرأي 3 -->
+            <div class="testimonial-card">
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+                <p class="review-text">"الدفاتر كيحمقو! الجودة ممتازة والثمن مناسب جداً مقارنة مع شنو كاين فالسوق. الله يعطيكوم الصحة فكرة رائعة."</p>
+                <div class="customer-info">
+                    <div class="customer-avatar">F</div>
+                    <div class="customer-details">
+                        <h4>فاطمة الزهراء</h4>
+                        <span>مراكش</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <!-- ================= نهاية قسم آراء الزبناء ================= -->
+
+    <!-- نظرة داخل الدفاتر -->
+    <section id="mockups" class="mockups-section">
+        <h2 class="section-title">نظرة داخل الدفاتر</h2>
+        <div class="mockups-grid">
+            <img src="images/img1.png" alt="صفحة تلوين 1" class="mockup-img">
+            <img src="images/img2.png" alt="صفحة تلوين 2" class="mockup-img">
+            <img src="images/img3.png" alt="صفحة تلوين 3" class="mockup-img">
+        </div>
+    </section>
+
+    <!-- قسم الطلب -->
+    <section id="order" class="order-section">
+        <h2 class="section-title">اطلبي نسختك الآن</h2>
+        
+        <div class="order-container">
+            <form id="purchaseForm">
+                
+                <p class="packs-title">اختاري العرض المناسب لكِ:</p>
+                
+                <!-- العرض الرئيسي -->
+                <label class="bundle-option">
+                    <input type="radio" name="pack" value="2" data-price="118" checked>
+                    <div class="bundle-content">
+                        <span class="bundle-name">المجموعة الكاملة (2 دفاتر) <span class="badge">🔥 الأكثر طلباً</span></span>
+                        <span class="bundle-price">118 درهم</span>
+                    </div>
+                </label>
+
+                <!-- الخيارات الأخرى -->
+                <label class="bundle-option">
+                    <input type="radio" name="pack" value="1" data-price="59">
+                    <div class="bundle-content">
+                        <span class="bundle-name">دفتر واحد فقط (اختياري)</span>
+                        <span class="bundle-price">59 درهم</span>
+                    </div>
+                </label>
+
+                    <label class="bundle-option">
+                    <input type="radio" name="pack" value="5" data-price="295">
+                    <div class="bundle-content">
+                        <span class="bundle-name">5 دفاتر + علبة أقلام ملونة 🎁</span>
+                        <span class="bundle-price">295 درهم</span>
+                    </div>
+                </label>
+
+                <hr style="border: 0; border-top: 1px solid #EAEAEA; margin: 25px 0;">
+
+                <p class="packs-title">معلومات التوصيل:</p>
+                <input type="text" id="fullName" name="name" placeholder="الاسم الكامل" class="form-input" required>
+                <input type="tel" id="phone" name="phone" placeholder="رقم الهاتف" class="form-input" required>
+                <input type="text" id="city" name="city" placeholder="المدينة" class="form-input" required>
+
+                <button type="submit" id="submitBtn" class="form-submit-btn">تأكيد الطلب والدفع عند الاستلام</button>
+                <p class="shipping-note">🚚 مصاريف الشحن تضاف حسب المدينة</p>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 Cozy Corner. جميع الحقوق محفوظة.</p>
+    </footer>
+
+    <!-- سكريبت الإرسال -->
+    <script>
+        document.getElementById('purchaseForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const submitBtn = document.getElementById('submitBtn');
+            submitBtn.innerText = "⏳ جاري تأكيد الطلب...";
+            submitBtn.style.backgroundColor = "#D4BBA5";
+            submitBtn.disabled = true;
+
+            const name = document.getElementById('fullName').value;
+            const phone = document.getElementById('phone').value;
+            const city = document.getElementById('city').value;
+            
+            const selectedPack = document.querySelector('input[name="pack"]:checked');
+            const quantity = selectedPack.value;
+            const totalPrice = selectedPack.getAttribute('data-price');
+
+            if (typeof fbq === 'function') {
+                fbq('track', 'Purchase', {
+                    content_name: "Coloring Books Bundle",
+                    content_ids: ['coloring_bundle_' + quantity],
+                    content_type: 'product',
+                    value: parseFloat(totalPrice),
+                    currency: 'MAD',
+                    num_items: parseInt(quantity)
+                });
+            }
+
+            const formData = new FormData();
+            formData.append('Product', 'مجموعة دفتري التلوين');
+            formData.append('Package_Selected', quantity + ' دفاتر');
+            formData.append('Total_Price', totalPrice + ' MAD');
+            formData.append('Name', name);
+            formData.append('Phone', phone);
+            formData.append('City', city);
+
+            fetch('https://formspree.io/f/xojonzqy', {
+                method: 'POST',
+                body: formData,
+                headers: { 'Accept': 'application/json' }
+            }).then(response => {
+                if (response.ok) {
+                    alert("🎉 شكراً لك! توصلنا بطلبك بنجاح. سنتواصل معك قريباً لتأكيد الشحن.");
+                    document.getElementById('purchaseForm').reset();
+                } else {
+                    alert("وقع مشكل أثناء إرسال الطلب، المرجو المحاولة مرة أخرى.");
+                }
+            }).catch(error => {
+                alert("تأكد من اتصالك بالإنترنت وحاول مرة أخرى.");
+            }).finally(() => {
+                submitBtn.innerText = "تأكيد الطلب والدفع عند الاستلام";
+                submitBtn.style.backgroundColor = "#2C2C2C";
+                submitBtn.disabled = false;
+            });
+        });
+    </script>
+
+</body>
+</html>
