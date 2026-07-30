@@ -166,7 +166,7 @@
             animation: float 4s ease-in-out infinite;
         }
 
-        /* ================= مميزات سريعة (Features) ================= */
+        /* ================= مميزات سريعة ================= */
         .features-bar {
             background-color: #fff;
             padding: 40px 5%;
@@ -195,7 +195,7 @@
             margin-bottom: 12px;
         }
 
-        /* ================= آراء الزبناء (Testimonials) ================= */
+        /* ================= آراء الزبناء ================= */
         .testimonials-section {
             padding: 80px 5%;
             background-color: #FAF9F6;
@@ -264,7 +264,7 @@
             font-size: 0.85rem;
         }
 
-        /* ================= صور من الداخل (Mockups) ================= */
+        /* ================= صور من الداخل (شبكة 5 صور) ================= */
         .mockups-section {
             padding: 80px 5%;
             text-align: center;
@@ -277,25 +277,30 @@
             margin-bottom: 50px;
             font-weight: 900;
         }
-        .mockups-grid {
-            display: flex;
-            justify-content: center;
+        .gallery-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 25px;
-            max-width: 1000px;
+            max-width: 1100px;
             margin: 0 auto;
-            flex-wrap: wrap;
         }
-        .mockup-img {
-            width: 30%;
-            min-width: 250px;
+        .gallery-item {
+            background-color: #f9f9f9;
             border-radius: 15px;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.06);
-            transition: transform 0.4s ease, box-shadow 0.4s ease;
-            cursor: pointer;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            transition: transform 0.2s, box-shadow 0.2s;
+            height: 380px; /* الارتفاع ديال كل تصويرة */
         }
-        .mockup-img:hover {
-            transform: scale(1.05) translateY(-5px);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
         }
 
         /* ================= قسم الطلب ================= */
@@ -313,13 +318,6 @@
             border-radius: 20px;
             box-shadow: 0 15px 40px rgba(0,0,0,0.06);
             text-align: right;
-        }
-
-        .packs-title {
-            font-size: 1.2rem;
-            color: #2C2C2C;
-            margin-bottom: 15px;
-            font-weight: 700;
         }
 
         .bundle-option {
@@ -446,6 +444,164 @@
 
         /* ================= تجاوب الشاشات (Mobile) ================= */
         @media (max-width: 768px) {
+            .hero-section {
+                flex-direction: column;
+                text-align: center;
+                padding-top: 50px;
+            }
+            .hero-text, .hero-image { width: 100%; }
+            .features-bar { flex-direction: column; gap: 15px; }
+            .testimonial-card, .gallery-item { width: 100%; max-width: 350px; margin: 0 auto; }
+            .bundle-name { font-size: 0.95rem; flex-wrap: wrap; gap: 8px; }
+            nav a.nav-link { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- شريط الإعلانات -->
+    <div class="announcement-bar">
+        <marquee behavior="scroll" direction="right" scrollamount="5">
+            ✨ عرض خاص: اطلبي المجموعة الكاملة اليوم واحصلي على ساعات من الهدوء والإبداع! ✨ الدفع عند الاستلام متاح في جميع المدن 🚚
+        </marquee>
+    </div>
+
+    <!-- الهيدر (Navbar) -->
+    <header>
+        <a href="#" class="logo">Cozy Corner</a>
+        <nav>
+            <a href="#features" class="nav-link">المميزات</a>
+            <a href="#testimonials" class="nav-link">آراء الكليان</a>
+            <a href="#mockups" class="nav-link">محتوى الدفاتر</a>
+            <a href="#order" class="cta-button" style="padding: 10px 25px; font-size: 1rem; animation: none;">اطلبي العرض الآن</a>
+        </nav>
+    </header>
+
+    <!-- الواجهة الرئيسية -->
+    <section class="hero-section">
+        <div class="hero-text">
+            <h1 class="hero-title">المجموعة الشاملة: دفتري التلوين</h1>
+            <p class="hero-subtitle">
+                اجمعي بين المتعة والفائدة مع مجموعتنا المكونة من دفتري تلوين متميزين. صفحات مليئة بالإبداع والهدوء مخصصة للأطفال من 8 حتى 14 عام، لتجربة تلوين مضاعفة لا تُنسى.
+            </p>
+            <a href="#order" class="cta-button">تأكيد طلب المجموعة - 118 درهم</a>
+        </div>
+        <div class="hero-image">
+            <img src="PIC/bundle.png" alt="مجموعة دفتري التلوين">
+        </div>
+    </section>
+
+    <!-- مميزات سريعة -->
+    <div id="features" class="features-bar">
+        <div class="feature-item">
+            <span>🎨</span>
+            دفتري تلوين بتصاميم مختلفة
+        </div>
+        <div class="feature-item">
+            <span>📏</span>
+            مطبوع على ورق A4 عالي الجودة
+        </div>
+        <div class="feature-item">
+            <span>🌿</span>
+            ساعات من الهدوء والتركيز
+        </div>
+    </div>
+
+    <!-- آراء الزبناء -->
+    <section id="testimonials" class="testimonials-section">
+        <h2 class="section-title">شنو قالو علينا الكليان 💛</h2>
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+                <p class="review-text">"خديت الباك لوليداتي بجوج، عجبوهم بزاف! الورق غليظ والرسومات زوينين. غادي نعاود نتقدى من عندكم أكيد."</p>
+                <div class="customer-info">
+                    <div class="customer-avatar">M</div>
+                    <div class="customer-details">
+                        <h4>مريم</h4>
+                        <span>الدار البيضاء</span>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+                <p class="review-text">"أحسن حاجة درت هي خديت هاد الدفاتر، نقصو ليهم من التليفون وولا عندهم الخاطر يلوّنو. التوصيل كان سريع تبارك الله عليكم."</p>
+                <div class="customer-info">
+                    <div class="customer-avatar">K</div>
+                    <div class="customer-details">
+                        <h4>كريم</h4>
+                        <span>الرباط</span>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+                <p class="review-text">"الدفاتر كيحمقو! الجودة ممتازة والثمن مناسب جداً مقارنة مع شنو كاين فالسوق. الله يعطيكوم الصحة فكرة رائعة."</p>
+                <div class="customer-info">
+                    <div class="customer-avatar">F</div>
+                    <div class="customer-details">
+                        <h4>فاطمة الزهراء</h4>
+                        <span>مراكش</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= نظرة داخل الدفاتر (5 صور) ================= -->
+    <section id="mockups" class="mockups-section">
+        <h2 class="section-title">نظرة داخل الدفاتر</h2>
+        <div class="gallery-container">
+            <!-- التصويرة 1 -->
+            <div class="gallery-item">
+                <img src="رابط_الصورة_1.jpg" alt="محتوى الدفتر 1">
+            </div>
+            <!-- التصويرة 2 -->
+            <div class="gallery-item">
+                <img src="رابط_الصورة_2.jpg" alt="محتوى الدفتر 2">
+            </div>
+            <!-- التصويرة 3 -->
+            <div class="gallery-item">
+                <img src="رابط_الصورة_3.jpg" alt="محتوى الدفتر 3">
+            </div>
+            <!-- التصويرة 4 -->
+            <div class="gallery-item">
+                <img src="رابط_الصورة_4.jpg" alt="محتوى الدفتر 4">
+            </div>
+            <!-- التصويرة 5 -->
+            <div class="gallery-item">
+                <img src="رابط_الصورة_5.jpg" alt="محتوى الدفتر 5">
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= قسم الطلب ================= -->
+    <section id="order" class="order-section">
+        <div class="order-container">
+            <h2 style="text-align: right; margin-bottom: 25px; font-size: 24px; color: #333;">اختاري العرض المناسب لك:</h2>
+
+            <form action="#" method="post">
+                <!-- خيارات العروض -->
+                <label class="bundle-option">
+                    <input type="radio" name="pack" value="2" data-price="118" checked>
+                    <div class="bundle-content">
+                        <span class="bundle-name">المجموعة الكاملة (2 دفاتر) <span class="badge">الاكثر طلباً 🔥</span></span>
+                        <span class="bundle-price">118 درهم</span>
+                    </div>
+                </label>
+
+                <label class="bundle-option">
+                    <input type="radio" name="pack" value="1" data-price="59">
+                    <div class="bundle-content">
+                        <span class="bundle-name">دفتر واحد فقط (اختياري)</span>
+                        <span class="bundle-price">59 درهم</span>
+                    </div>
+                </label>
+
+                <label class="bundle-option">
+                    <input type="radio" name="pack" value="3" data-price="177">
+                    <div class="bundle-content">
+                        <span class="bundle-name">3 دفاتر (لكل)</span>
+                        <span        @media (max-width: 768px) {
             .hero-section {
                 flex-direction: column;
                 text-align: center;
