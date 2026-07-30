@@ -568,56 +568,62 @@
     </section>
 
     <!-- قسم الطلب -->
-    <section id="order" class="order-section">
-        <h2 class="section-title">اطلبي نسختك الآن</h2>
+    <<!-- بداية سيكشن العروض - استبدل الكود القديم بهذا -->
+<section id="pricing" style="padding: 50px 20px; background-color: #f9f9f9;">
+    <!-- هاد الديف غادي تكريه باش يجمع العروض ويولي كيبان بحال كارت بيضاء -->
+    <div class="bundle-card" style="max-width: 600px; margin: 0 auto; background-color: #fff; padding: 30px; border-radius: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
         
-        <div class="order-container">
-            <form id="purchaseForm">
-                
-                <p class="packs-title">اختاري العرض المناسب لكِ:</p>
-                
-                <!-- العرض الرئيسي -->
-                <label class="bundle-option">
-                    <input type="radio" name="pack" value="2" data-price="118" checked>
-                    <div class="bundle-content">
-                        <span class="bundle-name">المجموعة الكاملة (2 دفاتر) <span class="badge">🔥 الأكثر طلباً</span></span>
-                        <span class="bundle-price">118 درهم</span>
-                    </div>
-                </label>
+        <h2 style="text-align: right; margin-bottom: 25px; font-size: 24px; color: #333;">اختاري العرض المناسب لك:</h2>
 
-                <!-- الخيارات الأخرى -->
-                <label class="bundle-option">
-                    <input type="radio" name="pack" value="1" data-price="59">
-                    <div class="bundle-content">
-                        <span class="bundle-name">دفتر واحد فقط (اختياري)</span>
-                        <span class="bundle-price">59 درهم</span>
-                    </div>
-                </label>
+        <form action="#" method="post">
+            <!-- الـ Labels القديمة ديالك -->
+            <label class="bundle-option">
+                <input type="radio" name="pack" value="2" data-price="118" checked>
+                <div class="bundle-content">
+                    <span class="bundle-name">المجموعة الكاملة (2 دفاتر) <span class="badge">الاكثر طلباً 🔥</span></span>
+                    <span class="bundle-price">118 درهم</span>
+                </div>
+            </label>
 
-                <label class="bundle-option">
-                    <input type="radio" name="pack" value="3" data-price="177">
-                    <div class="bundle-content">
-                        <span class="bundle-name">3 دفاتر (للكل)</span>
-                        <span class="bundle-price">177 درهم</span>
-                    </div>
-                </label>
+            <!-- الخيارات الأخرى -->
+            <label class="bundle-option">
+                <input type="radio" name="pack" value="1" data-price="59">
+                <div class="bundle-content">
+                    <span class="bundle-name">دفتر واحد فقط (اختياري)</span>
+                    <span class="bundle-price">59 درهم</span>
+                </div>
+            </label>
 
-                <label class="bundle-option">
-                    <input type="radio" name="pack" value="5" data-price="295">
-                    <div class="bundle-content">
-                        <span class="bundle-name">5 دفاتر + علبة ألوان</span>
-                        <span class="bundle-price">500 درهم</span>
-                    </div>
-                </label>
+            <label class="bundle-option">
+                <input type="radio" name="pack" value="3" data-price="177">
+                <div class="bundle-content">
+                    <span class="bundle-name">3 دفاتر (لكل)</span>
+                    <span class="bundle-price">177 درهم</span>
+                </div>
+            </label>
 
+            <label class="bundle-option">
+                <input type="radio" name="pack" value="5" data-price="295">
+                <div class="bundle-content">
+                    <span class="bundle-name">5 دفاتر + علبة ألوان</span>
+                    <span class="bundle-price">500 درهم</span>
+                </div>
+            </label>
 
-            </form>
-        </div>
-    </section>
+            <!-- [التصحيح:] هاد البوتون الجديد هو اللي خاصو يكون هنا -->
+            <div style="text-align: center; margin-top: 30px;">
+                <button type="submit" class="cta-button" style="background-color: #c9a98d; color: white; border: none; padding: 15px 30px; border-radius: 30px; font-size: 18px; cursor: pointer; width: 100%; font-weight: bold; transition: background-color 0.3s;">
+                    اطلب الآن
+                </button>
+            </div>
+        </form>
+    </div> <!-- نهاية الكارت البيضاء -->
+</section>
 
-            <footer>
-                <p>© 2026 Cozy Corner. جميع الحقوق محفوظة.</p>
-            </footer>
+<!-- هاد الفوتر خاصو يكون تحت السيكشن بوحدو، ماشي لداخل -->
+<footer style="text-align: center; padding: 20px; color: #777;">
+    <p>&copy; 2026 Cozy Corner. جميع الحقوق محفوظة.</p>
+</footer>
 
 </body>
 </html>
